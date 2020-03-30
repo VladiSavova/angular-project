@@ -59,13 +59,9 @@ const routes: Routes = [
 
   },
   {
-    path: 'favourite/:id',
+    path: "favouritePosts/:id",
     component: FavouritePostsComponent,
-    canActivate: [IsAuthGuard]
-  },
-  {
-    path: 'addToFavourites/:id',
-    component: FavouritePostsComponent
+    // canActivate: [IsAuthGuard]
   }
 
 

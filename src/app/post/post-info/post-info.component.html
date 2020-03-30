@@ -15,7 +15,7 @@
     <a
       *ngIf="post.creator != currentUser && currentUser && !isAdmin"
       (click)="addToFavourites(post._id, currentUserId)"
-      class="specialBtn2" routerLink="/addToFavourites/{{post._id}}"
+      class="specialBtn2" routerLink="/favouritePosts/{{authService.isAuth()}}"
       >Add To Favourite Posts</a
     >
     <br />

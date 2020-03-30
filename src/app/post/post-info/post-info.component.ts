@@ -43,7 +43,9 @@ export class PostInfoComponent implements OnInit {
 
   addToFavourites(postId, userId) {
     this.crudService.addToFavourites(postId, userId).subscribe(data => {
+      console.log(data);
       this.router.navigate(['/favourite/:id']);
+     
     });
   }
 }
