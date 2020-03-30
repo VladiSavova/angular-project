@@ -1,0 +1,10 @@
+<div>
+    <h1>All Categories</h1> <br /> <hr />
+             <div *ngFor="let category of categories$ | async">
+            <h1>{{category.name}}</h1>
+            <img src={{category.photo}}> <br />
+            <a [routerLink]="['/home', category._id]" class="specialBtn" name={{category._id}}>View All {{category.name}} Posts</a>
+            <br /> <br /> 
+            <hr />
+        </div>
+  </div>

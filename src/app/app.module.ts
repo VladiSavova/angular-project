@@ -3,16 +3,54 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavigationComponent } from './core/navigation/navigation.component';
+import { FooterComponent } from './core/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CreateComponent } from './post/create/create.component';
+import { AuthenticationService } from './services/authentication.service';
+import { RouterModule } from '@angular/router';
+import { CreateCategoryComponent } from './categories/create-category/create-category.component';
+import { CategoryPostComponent } from './post/category-post/category-post.component';
+import { PostInfoComponent } from './post/post-info/post-info.component';
+import { DetailsPostComponent } from './post/details-post/details-post.component';
+import { MyPostsComponent } from './post/my-posts/my-posts.component';
+import { FavouritePostsComponent } from './post/favourite-posts/favourite-posts.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    NavigationComponent,
+    FooterComponent,
+    CreateComponent,
+    CreateCategoryComponent,
+    CategoryPostComponent,
+    PostInfoComponent,
+    DetailsPostComponent,
+    MyPostsComponent,
+    FavouritePostsComponent
+ 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule
+
   ],
-  providers: [],
+  providers: [
+    AuthenticationService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

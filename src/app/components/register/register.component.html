@@ -1,0 +1,64 @@
+
+<form [formGroup]="form" class="register-form" (submit)="register()">
+  <div class="container">
+      <h1>Register</h1>
+      
+      <hr />
+
+      <label htmlFor="email">Email</label> <br />
+      <input type="email" name="email" placeholder="Enter your email" formControlName="email" required/> <br />
+      <div class="alert alert-danger" *ngIf="f.email.touched && f.email.errors">
+         Please, provide a valid email!
+      </div>
+
+      <label htmlFor="username">Username</label> <br />
+      <input type="text" name="username" placeholder="Enter your username" formControlName="username" required/> <br />
+      <div class="alert alert-danger" *ngIf="f.username.touched && f.username.errors?.minlength">
+        Length must be at least {{f.username.errors.minlength.requiredLength}} characters!
+      </div>
+      <div class="alert alert-danger" *ngIf="f.username.touched && f.username.errors?.maxlength">
+        Length must not be more than {{f.username.errors.maxlength.requiredLength}} characters!
+      </div>
+
+
+      <label htmlFor="password">Password</label> <br />
+      <input type="password" name="password" placeholder="Enter your password" formControlName="password" required/> <br />
+      <div class="alert alert-danger" *ngIf="f.password.touched && f.password.errors?.minlength">
+        Length must be at least {{f.password.errors.minlength.requiredLength}} characters!
+      </div>
+      <div class="alert alert-danger" *ngIf="f.password.touched && f.password.errors?.maxlength">
+        Length must not be more than {{f.password.errors.maxlength.requiredLength}} characters!
+      </div>
+      <button type="submit" class="registerbtn">Register</button>
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col s10 offset-s1" id="panel">
+      <h3 id="title">Register</h3>
+      <form class="col s12" [formGroup]="signupForm" novalidate (ngSubmit)="signupUser()">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="user_name" type="text" formControlName="username">
+            <label for="user_name">Username</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" formControlName="email">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="pass-word" type="password" formControlName="password">
+            <label for="pass-word">Password</label>
+          </div>
+        </div>
+        <button class="btn waves-effect" id="signupbtn">
+            Sign Up
+        </button>
+      </form>
+    </div>
+  </div>
+</div> -->
+  

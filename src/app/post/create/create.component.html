@@ -1,0 +1,91 @@
+<!-- <label>Browser Select</label>
+<select class="browser-default">
+  <option value="" disabled selected>Choose your option</option>
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+  <option value="3">Option 3</option>
+<option *ngFor="let category of categories$ | async" [value]="category.name">{{category.name}}</option> -->
+<!-- </select> --> 
+<form [formGroup]="form" class="create-form" (submit)="createPost()">
+  <div class="container">
+      <h1>Add Post</h1> <br/> 
+     
+    <div class="form-group">
+      <input hidden formControlName="creator">
+      <label for="contry">Select Category</label>
+      <!-- <select class="form-control" id="category" formControlName="category">
+        <option *ngFor="let category of categories$ | async" [value]="category.name">{{category.name}}</option>
+      </select> -->
+      <select class="browser-default" id="category" formControlName="category">
+        <option *ngFor="let category of categories$ | async" [value]="category.name">{{category.name}}</option>
+        
+       </select>
+    </div>
+    <div class="alert alert-danger" *ngIf="form.controls.category.touched && form.controls.category.errors">
+      Please, select category! 
+    </div>
+
+      <label html="name">Name</label> <br />
+      <input type="text" name="name" placeholder="Recipe name" formControlName="name" required/> <br />
+      <div class="alert alert-danger" *ngIf="form.controls.name.touched && form.controls.name.errors?.minlength">
+        Length must be at least {{form.controls.name.errors.minlength.requiredLength}} characters!
+      </div>
+      <div class="alert alert-danger" *ngIf="form.controls.name.touched && form.controls.name.errors?.maxlength">
+        Length must be at least {{form.controls.name.errors.maxlength.requiredLength}} characters!
+      </div> 
+      <label html="photo">Photo</label> <br />
+      <input type="text" name="photo" placeholder="Photo" formControlName="photo" required/> <br />
+      <div class="alert alert-danger" *ngIf="form.controls.photo.touched &&  form.controls.photo.errors">
+        Please, add a photo!
+      </div>
+      <br/>
+       <label html="description">Description</label> <br />
+      <textarea type="text" name="description" placeholder="Write the recipe here ..." formControlName="description" required></textarea> <br />
+      <div class="alert alert-danger" *ngIf="form.controls.description.touched &&  form.controls.description.errors">
+        Please, write the recipe here! 
+      </div>
+      <button type="submit" class="btn">Add Post</button>
+  </div>
+</form>
+<!-- 
+
+<form [formGroup]="form" class="create-form" (submit)="createRecipe()">
+  <div class="container">
+      <h1>Add Recipe</h1> <br/> 
+      <p>Fill in this form to add a recipe.</p> <hr/>
+    <div class="form-group">
+      <input hidden formControlName="creator">
+      <label for="contry">Select Category</label>
+      <select class="form-control" id="category" formControlName="category">
+        <option *ngFor="let category of categories$ | async" [value]="category.name">{{category.name}}</option>
+      </select>
+    </div>
+    <div class="alert alert-danger" *ngIf="form.controls.category.touched && form.controls.category.errors">
+      Please, select category! 
+    </div>
+
+      <label html="name">Name</label> <br />
+      <input type="text" name="name" placeholder="Recipe name" formControlName="name" required/> <br />
+      <div class="alert alert-danger" *ngIf="form.controls.name.touched && form.controls.name.errors?.minlength">
+        Length must be at least {{form.controls.name.errors.minlength.requiredLength}} characters!
+      </div>
+      <div class="alert alert-danger" *ngIf="form.controls.name.touched && form.controls.name.errors?.maxlength">
+        Length must be at least {{form.controls.name.errors.maxlength.requiredLength}} characters!
+      </div> 
+      <label html="photo">Photo</label> <br />
+      <input type="text" name="photo" placeholder="Photo" formControlName="photo" required/> <br />
+      <div class="alert alert-danger" *ngIf="form.controls.photo.touched &&  form.controls.photo.errors">
+        Please, add a photo!
+      </div>
+      <label html="products">Products</label> <br />
+      <div *ngFor="let product of allProducts; let i = index">
+        <input type="checkbox" [value]="product.name" (change)="onCheckChange($event)"/> {{product.name}}
+       </div> <br/>
+       <label html="description">Description</label> <br />
+      <textarea type="text" name="description" placeholder="Write the recipe here ..." formControlName="description" required></textarea> <br />
+      <div class="alert alert-danger" *ngIf="form.controls.description.touched &&  form.controls.description.errors">
+        Please, write the recipe here! 
+      </div>
+      <button type="submit" class="btn">Add Recipe</button>
+  </div>
+</form> -->

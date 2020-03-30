@@ -1,0 +1,31 @@
+ <nav>
+    <div class="nav-wrapper">
+      <a href="home" class="brand-logo">MySite</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <div *ngIf="!authService.isAuth()">
+          <li><a routerLink="register">Register</a></li>
+          <li><a routerLink="login">Login</a></li>
+        </div>
+
+      
+
+       <div *ngIf="authService.isAuth() && !authService.isAdmin()">
+        <li><a routerLink="create">Create</a></li>
+        <li><a routerLink="myPosts/:id">MyPosts</a></li>
+        <li><a routerLink="favourite/:id">favourite</a></li>
+        <li><a routerLink="category">Category</a></li>
+       <li><a href="home" (click)=" logout()">Logout</a></li>
+       </div>
+
+       <!-- <div *ngIf="authService.isAuth() && authService.isAdmin()">
+        <li><a routerLink="category">Category</a></li>
+        <li><a routerLink="create">Create</a></li>
+        <li><a routerLink="myPosts/:id">MyPosts</a></li>
+        <li><a routerLink="favourite/:id">favourite</a></li>
+       <li><a href="home" (click)=" logout()">Logout</a></li>
+       </div>> -->
+      </ul>
+    </div>
+  </nav>
+  
+   

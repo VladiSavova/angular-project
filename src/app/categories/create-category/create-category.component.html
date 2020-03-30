@@ -1,0 +1,17 @@
+<p>create-category works!</p>
+<form [formGroup]="form" class="create-form" (submit)="createCategory()">
+    <div class="container">
+        <h1>Add Category</h1> <br/> 
+        <label html="name">Name</label> <br />
+        <input type="text" name="name" placeholder="Category name" formControlName="name" required/> <br />
+        <div class="alert alert-danger" *ngIf="form.controls.name.touched && form.controls.name.errors?.minlength">
+          Length must be at least {{form.controls.name.errors.minlength.requiredLength}} characters!
+        </div>
+        <div class="alert alert-danger" *ngIf="form.controls.name.touched && form.controls.name.errors?.maxlength">
+          Length must be at least {{form.controls.name.errors.maxlength.requiredLength}} characters!
+        </div>
+        <label html="photo">Photo</label> <br />
+        <input type="text" name="photo" placeholder="Category photo" formControlName="photo" required/> <br />
+        <button type="submit" class="btn">Add Category</button>
+    </div>
+  </form>

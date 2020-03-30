@@ -1,0 +1,39 @@
+<p>post-info works!</p>
+<div *ngIf="details">
+    <h1>All {{categoryName}} Posts</h1>
+    <hr/> <br/> <br/> 
+  </div>
+  
+  <div *ngFor="let post of posts">
+    <h1>{{ post.name }}</h1>
+    <img src="{{ post.photo }}" /> <br />
+   
+
+    <h2>Post:</h2>
+    <p>{{ post.description }}</p>
+    <div *ngIf="show">
+    <a
+      *ngIf="post.creator != currentUser && currentUser && !isAdmin"
+      (click)="addToFavourites(post._id, currentUserId)"
+      class="specialBtn2" routerLink="/addToFavourites/{{post._id}}"
+      >Add To Favourite Posts</a
+    >
+    <br />
+    <br />
+    <div class="btn-group-vertical" *ngIf="post.creator == currentUser || isAdmin">
+     <a class="specialBtn1" routerLink="/delete/{{post._id}}" (click)="deletePost(post._id)">Delete</a>
+    </div>
+  </div>
+  <div *ngIf="hide">
+    <a
+      (click)="removeFromFavourites(post._id, currentUserId)"
+      class="specialBtn2"
+      >Remove From Favourite Posts</a
+    >
+  </div>
+  <a *ngIf="details" routerLink="/details/{{post._id}}" class="specialBtn" name={{post._id}}>Details</a>
+    <br />
+    <br />
+    <hr />
+  </div>
+  
