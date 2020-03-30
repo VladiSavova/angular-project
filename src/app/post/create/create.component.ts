@@ -36,7 +36,6 @@ export class CreateComponent implements OnInit {
       name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
       category: ['', [Validators.required]],
       photo: ['', [Validators.required]],
-      products: new FormArray([]),
       description: ['', [Validators.required]],
       creator: this.currentUser
     });

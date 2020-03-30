@@ -10,8 +10,14 @@
         <div class="alert alert-danger" *ngIf="form.controls.name.touched && form.controls.name.errors?.maxlength">
           Length must be at least {{form.controls.name.errors.maxlength.requiredLength}} characters!
         </div>
+        <div class="alert alert-danger" *ngIf="form.controls.name.touched &&  form.controls.name.errors">
+          Please, add a name!
+        </div>
         <label html="photo">Photo</label> <br />
         <input type="text" name="photo" placeholder="Category photo" formControlName="photo" required/> <br />
+        <div class="alert alert-danger" *ngIf="form.controls.photo.touched &&  form.controls.photo.errors">
+          Please, add a photo!
+        </div>
         <button type="submit" class="btn">Add Category</button>
     </div>
   </form>

@@ -33,6 +33,9 @@
       <div class="alert alert-danger" *ngIf="form.controls.name.touched && form.controls.name.errors?.maxlength">
         Length must be at least {{form.controls.name.errors.maxlength.requiredLength}} characters!
       </div> 
+      <div class="alert alert-danger" *ngIf="form.controls.name.touched &&  form.controls.name.errors">
+        Please, write a name!
+      </div>
       <label html="photo">Photo</label> <br />
       <input type="text" name="photo" placeholder="Photo" formControlName="photo" required/> <br />
       <div class="alert alert-danger" *ngIf="form.controls.photo.touched &&  form.controls.photo.errors">
@@ -40,9 +43,9 @@
       </div>
       <br/>
        <label html="description">Description</label> <br />
-      <textarea type="text" name="description" placeholder="Write the recipe here ..." formControlName="description" required></textarea> <br />
+      <textarea type="text" name="description" placeholder="Write the description here ..." formControlName="description" required></textarea> <br />
       <div class="alert alert-danger" *ngIf="form.controls.description.touched &&  form.controls.description.errors">
-        Please, write the recipe here! 
+        Please, write the description here! 
       </div>
       <button type="submit" class="btn">Add Post</button>
   </div>

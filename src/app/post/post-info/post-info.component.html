@@ -12,12 +12,12 @@
     <h2>Post:</h2>
     <p>{{ post.description }}</p>
     <div *ngIf="show">
-    <a
+    <!-- <a
       *ngIf="post.creator != currentUser && currentUser && !isAdmin"
       (click)="addToFavourites(post._id, currentUserId)"
       class="specialBtn2" routerLink="/favouritePosts/{{authService.isAuth()}}"
       >Add To Favourite Posts</a
-    >
+    > -->
     <br />
     <br />
     <div class="btn-group-vertical" *ngIf="post.creator == currentUser || isAdmin">
@@ -25,11 +25,11 @@
     </div>
   </div>
   <div *ngIf="hide">
-    <a
+    <!-- <a
       (click)="removeFromFavourites(post._id, currentUserId)"
       class="specialBtn2"
       >Remove From Favourite Posts</a
-    >
+    > -->
   </div>
   <a *ngIf="details" routerLink="/details/{{post._id}}" class="specialBtn" name={{post._id}}>Details</a>
     <br />
