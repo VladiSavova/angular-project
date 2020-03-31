@@ -15,7 +15,6 @@ export class DetailsPostComponent implements OnInit {
   currentUser;
   show;
   hide;
-  isAdmin;
   details;
   constructor(
     private route: ActivatedRoute,
@@ -30,7 +29,6 @@ export class DetailsPostComponent implements OnInit {
     this.show = true;
     this.hide = false;
     this.details = false;
-    this.isAdmin = this.authService.isAdmin();
 
     this.route.params.subscribe(data => {
       this.service.getPostDetails(data.id).subscribe(data => {

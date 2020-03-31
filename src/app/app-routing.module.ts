@@ -10,7 +10,6 @@ import { DetailsPostComponent } from './post/details-post/details-post.component
 import { MyPostsComponent } from './post/my-posts/my-posts.component';
 import { FavouritePostsComponent } from './post/favourite-posts/favourite-posts.component';
 import { AnonymousGuard } from './guards/anonymous.guard';
-import { AdminGuard } from './guards/admin.guard';
 import { IsAuthGuard } from './guards/is-auth.guard';
 
 
@@ -44,7 +43,7 @@ const routes: Routes = [
   {
     path: 'category',
     component: CreateCategoryComponent,
-    // canActivate:  [AdminGuard]
+    canActivate: [IsAuthGuard]
 
   },
   {
@@ -57,13 +56,7 @@ const routes: Routes = [
     component: MyPostsComponent,
     canActivate: [IsAuthGuard]
 
-  },
-  {
-    path: "favouritePosts/:id",
-    component: FavouritePostsComponent,
-    // canActivate: [IsAuthGuard]
   }
-
 
 ];
 
