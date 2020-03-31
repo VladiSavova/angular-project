@@ -18,7 +18,7 @@ import { CategoryPostComponent } from './post/category-post/category-post.compon
 import { PostInfoComponent } from './post/post-info/post-info.component';
 import { DetailsPostComponent } from './post/details-post/details-post.component';
 import { MyPostsComponent } from './post/my-posts/my-posts.component';
-import { FavouritePostsComponent } from './post/favourite-posts/favourite-posts.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -36,7 +36,7 @@ import { FavouritePostsComponent } from './post/favourite-posts/favourite-posts.
     PostInfoComponent,
     DetailsPostComponent,
     MyPostsComponent,
-    FavouritePostsComponent
+    NotFoundComponent
  
   ],
   imports: [
@@ -45,7 +45,8 @@ import { FavouritePostsComponent } from './post/favourite-posts/favourite-posts.
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    
 
   ],
   providers: [

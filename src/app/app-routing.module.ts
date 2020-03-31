@@ -11,6 +11,7 @@ import { MyPostsComponent } from './post/my-posts/my-posts.component';
 import { FavouritePostsComponent } from './post/favourite-posts/favourite-posts.component';
 import { AnonymousGuard } from './guards/anonymous.guard';
 import { IsAuthGuard } from './guards/is-auth.guard';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -56,6 +57,10 @@ const routes: Routes = [
     component: MyPostsComponent,
     canActivate: [IsAuthGuard]
 
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 
 ];
