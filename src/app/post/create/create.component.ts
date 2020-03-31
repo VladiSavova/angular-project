@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Category } from 'src/app/models/category';
+import { Category } from '../../interfaces/category';
 import { ListService } from 'src/app/services/list.service';
 import { CreateService } from 'src/app/services/create.service';
 import * as M from 'materialize-css';

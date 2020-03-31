@@ -1,4 +1,4 @@
-import { Category } from '../models/category';
+import { Category } from '../interfaces/category';
 
 export interface Post {
     _id: string;    
