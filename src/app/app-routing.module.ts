@@ -52,7 +52,7 @@ const routes: Routes = [
 
   },
   {
-    path: "myPosts/:id",
+    path: 'myPosts/:id',
     component: MyPostsComponent,
     canActivate: [IsAuthGuard]
 

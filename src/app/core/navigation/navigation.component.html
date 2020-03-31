@@ -13,19 +13,11 @@
        <div *ngIf="authService.isAuth() && !authService.isAdmin()">
         <li><a routerLink="create">CreatePost</a></li>
         <li><a routerLink="myPosts/:id">MyPosts</a></li>
-        <!-- <li><a routerLink="/favouritePosts/{{authService.isAuth()}}">favourite</a></li> -->
         <li><a routerLink="home">AllPosts</a></li>
         <li><a routerLink="category">CreateCategory</a></li>
        <li><a href="home" (click)=" logout()">Logout</a></li>
        </div>
 
-       <!-- <div *ngIf="authService.isAuth() && authService.isAdmin()">
-        <li><a routerLink="category">Category</a></li>
-        <li><a routerLink="create">Create</a></li>
-        <li><a routerLink="myPosts/:id">MyPosts</a></li>
-        <li><a routerLink="favourite/:id">favourite</a></li>
-       <li><a href="home" (click)=" logout()">Logout</a></li>
-       </div>> -->
       </ul>
     </div>
   </nav>
