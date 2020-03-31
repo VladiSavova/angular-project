@@ -1,6 +1,7 @@
-<form [formGroup]="form" class="create-form" (submit)="createCategory(form)">
+<div class="container">
+  <form [formGroup]="form" class="create-form" (submit)="createCategory(form)">
     <div class="container">
-        <h1>Add Category</h1> <br/> 
+        <h1>Create Category</h1> <br/> 
         <label html="name">Name</label> <br />
         <input type="text" name="name" placeholder="Category name" formControlName="name" required/> <br />
         <div class="alert alert-danger" *ngIf="form.controls.name.touched && form.controls.name.errors?.minlength">
@@ -17,9 +18,8 @@
         <div class="alert alert-danger" *ngIf="form.controls.photo.touched &&  form.controls.photo.errors">
           Please, add a photo!
         </div>
-        <!-- <div class="alert alert-danger" *ngIf="form.controls.photo.errors?.pattern">
-          must start with https...
-         </div> -->
-        <button type="submit" class="btn" [disabled]="!form.valid">Add Category</button>
+
+        <button type="submit" class="btn" [disabled]="!form.valid">Create</button>
     </div>
 </form>
+</div>

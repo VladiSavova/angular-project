@@ -26,18 +26,12 @@ export class CreateComponent implements OnInit {
  
   ngOnInit() {
     
-    // document.addEventListener('DOMContentLoaded', function() {
-    //   var elems = document.querySelectorAll('select');
-    //   var instances = M.FormSelect.init(elems, {
-       
-    //   });
-    // });
     this.currentUser = localStorage.getItem('userId');
     this.form = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       category: ['', [Validators.required]],
       photo: ['', [Validators.required] ],
-      description: ['', [Validators.required]],
+      description: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(100)] ],
       creator: this.currentUser
     });
     console.log(this.currentUser)

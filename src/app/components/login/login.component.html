@@ -22,11 +22,11 @@
     </div>
   </div>
 </div> -->
+<div class="container">
 <form [formGroup]="form" class="login-form" (submit)="login()">
   <div class="container">
     <h1>Login</h1>
-   
-    <hr />
+
     <label html="username">Username</label> <br />
     <input
       type="text"
@@ -45,9 +45,12 @@
       required
     />
     <br />
-    <button type="submit" class="loginbtn"  [disabled]="!form.valid">
+    <button type="submit" class="btn"  [disabled]="!form.valid">
       Login
     </button>
    
+    
+   
   </div>
 </form>
+</div>
