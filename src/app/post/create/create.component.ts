@@ -23,6 +23,7 @@ export class CreateComponent implements OnInit {
     private createService: CreateService
   ) {}
 
+ 
   ngOnInit() {
     
     // document.addEventListener('DOMContentLoaded', function() {
@@ -35,7 +36,7 @@ export class CreateComponent implements OnInit {
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
       category: ['', [Validators.required]],
-      photo: ['', [Validators.required]],
+      photo: ['', [Validators.required] ],
       description: ['', [Validators.required]],
       creator: this.currentUser
     });
@@ -53,11 +54,12 @@ export class CreateComponent implements OnInit {
    this.categories$ = this.listService.getAllCategories();
   }
 
-  createPost() {
+  createPost(data) {
     this.createService.createPost(this.form.value).subscribe((data) => {
       this.router.navigate(['/home']);
       console.log('create');
       
     })
   }
+
 }

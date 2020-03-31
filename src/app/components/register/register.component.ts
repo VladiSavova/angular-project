@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
     this.form = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(25)]],
-      email: ['', [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
+      email: ['', [Validators.required ]],
      
     })
     console.log(this.form)

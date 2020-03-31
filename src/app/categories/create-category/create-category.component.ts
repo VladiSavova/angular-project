@@ -20,10 +20,12 @@ export class CreateCategoryComponent implements OnInit {
     })
   }
 
-  createCategory() {
-    this.service.createCategory(this.form.value).subscribe((data) => {
-      this.router.navigate(['/home'])
-    })
+  createCategory(form) {
+    // this.service.createCategory(this.form.value).subscribe((data) => {
+    //   this.router.navigate(['/home'])
+    // })
+    console.log(form);
+  
   }
 
 }

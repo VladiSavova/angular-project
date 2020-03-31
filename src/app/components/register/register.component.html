@@ -2,17 +2,22 @@
 <form [formGroup]="form" class="register-form" (submit)="register()">
   <div class="container">
       <h1>Register</h1>
-      
-      <hr />
 
       <label htmlFor="email">Email</label> <br />
-      <input type="email" name="email" placeholder="Enter your email" formControlName="email" required/> <br />
-      <div class="alert alert-danger" *ngIf="f.email.touched && f.email.errors">
-         Please, provide a valid email!
+      <input type="email" name="email" placeholder="Enter your email" formControlName="email" pattern="[^@]+@[^\.]+\..+" required/> <br />
+     <div class="alert alert-danger" *ngIf="f.email.touched && f.email.errors.required">
+        Email is required!
       </div>
+      <div class="alert alert-danger" *ngIf="f.email.errors?.pattern">
+        Please, provide a valid email!
+     </div>
 
       <label htmlFor="username">Username</label> <br />
       <input type="text" name="username" placeholder="Enter your username" formControlName="username" required/> <br />
+      <div class="alert alert-danger" *ngIf="f.username.touched && f.username.errors.required">
+        Username is required!
+     </div>
+      
       <div class="alert alert-danger" *ngIf="f.username.touched && f.username.errors?.minlength">
         Length must be at least {{f.username.errors.minlength.requiredLength}} characters!
       </div>
@@ -29,7 +34,7 @@
       <div class="alert alert-danger" *ngIf="f.password.touched && f.password.errors?.maxlength">
         Length must not be more than {{f.password.errors.maxlength.requiredLength}} characters!
       </div>
-      <button type="submit" class="registerbtn">Register</button>
+      <button type="submit" class="registerbtn"  [disabled]="!form.valid">Register</button>
 
 <!-- <div class="container">
   <div class="row">
