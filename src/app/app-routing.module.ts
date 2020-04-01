@@ -8,22 +8,29 @@ import { CreateCategoryComponent } from './components/create-category/create-cat
 import { CategoryPostComponent } from './post/category-post/category-post.component';
 import { DetailsPostComponent } from './post/details-post/details-post.component';
 import { MyPostsComponent } from './post/my-posts/my-posts.component';
-import { FavouritePostsComponent } from './post/favourite-posts/favourite-posts.component';
 import { AnonymousGuard } from './guards/anonymous.guard';
 import { IsAuthGuard } from './guards/is-auth.guard';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const routes: Routes = [
-  {
-    path: 'home',
-    // pathMatch: 'full',
-    component: HomeComponent
+  { 
+    path: "",
+    pathMatch: "full",
+    component: HomeComponent 
   },
- 
   {
-    path: 'home/:id',
-    component: CategoryPostComponent
+    path: "home",
+    children: [
+      { 
+        path: "",
+       component: HomeComponent 
+      },
+      { 
+        path: ":id",
+        component: CategoryPostComponent 
+      }
+    ]
   },
   {
     path: 'login',
@@ -58,10 +65,10 @@ const routes: Routes = [
     canActivate: [IsAuthGuard]
 
   },
-  // {
-  //   path: '**',
-  //   component: NotFoundComponent
-  // }
+  {
+    path: '**',
+    component: NotFoundComponent
+  }
 
 ];
 

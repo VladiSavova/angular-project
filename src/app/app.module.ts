@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -20,8 +19,6 @@ import { DetailsPostComponent } from './post/details-post/details-post.component
 import { MyPostsComponent } from './post/my-posts/my-posts.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +34,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
     DetailsPostComponent,
     MyPostsComponent,
     NotFoundComponent
- 
   ],
   imports: [
     BrowserModule,
@@ -46,7 +42,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-    
+
   ],
   providers: [
     AuthenticationService,
