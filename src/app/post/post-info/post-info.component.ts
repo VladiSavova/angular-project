@@ -31,21 +31,8 @@ export class PostInfoComponent implements OnInit {
 
   deletePost(id) {
     this.crudService.deletePost(id).subscribe(data => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     });
   }
-
-  removeFromFavourites(postId, userId) {
-    this.crudService.removeFromFavourites(postId, userId).subscribe((data) => {
-      this.router.navigate(['/home']);
-    })
-  }
-
-  addToFavourites(postId, userId) {
-    this.crudService.addToFavourites(postId, userId).subscribe(data => {
-      console.log(data);
-      this.router.navigate(['/home']);
-     
-    });
-  }
+ 
 }

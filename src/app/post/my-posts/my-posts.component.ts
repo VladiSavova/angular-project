@@ -34,5 +34,10 @@ export class MyPostsComponent implements OnInit {
     })
   }
 
+  deletePost(id) {
+    this.crudService.deletePost(id).subscribe(data => {
+      this.router.navigate(['/']);
+    });
+  }
 }
 
