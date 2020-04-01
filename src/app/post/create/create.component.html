@@ -6,13 +6,9 @@
       <div class="form-group">
         <input hidden formControlName="creator">
         <label for="contry">Select Category</label>
-        <!-- <select class="form-control" id="category" formControlName="category">
-          <option *ngFor="let category of categories$ | async" [value]="category.name">{{category.name}}</option>
-        </select> -->
         <select class="browser-default" id="category" formControlName="category">
           <option *ngFor="let category of categories$ | async" [value]="category.name">{{category.name}}</option>
-          
-         </select>
+        </select>
       </div>
       <div class="alert alert-danger" *ngIf="form.controls.category.touched && form.controls.category.errors">
         Please, select category! 
@@ -26,25 +22,25 @@
         <div class="alert alert-danger" *ngIf="form.controls.name.touched && form.controls.name.errors?.maxlength">
           Length must be at least {{form.controls.name.errors.maxlength.requiredLength}} characters!
         </div> 
-        <div class="alert alert-danger" *ngIf="form.controls.name.touched &&  form.controls.name.errors">
+        <div class="alert alert-danger" *ngIf="form.controls.name.touched &&  form.controls.name.errors?.required">
           Please, write a name!
         </div>
         <label html="photo">Photo</label> <br />
         <input type="text" name="photo" placeholder="Photo" formControlName="photo"  required/> <br />
-        <div class="alert alert-danger" *ngIf="form.controls.photo.touched &&  form.controls.photo.errors">
+        <div class="alert alert-danger" *ngIf="form.controls.photo.touched &&  form.controls.photo.errors?.required">
           Please, add a photo!
         </div>
         <br/>
          <label html="description">Description</label> <br />
         <textarea type="text" name="description" placeholder="Write the description here ..." formControlName="description" required></textarea> <br />
-        <div class="alert alert-danger" *ngIf="form.controls.description.touched &&  form.controls.description.errors.required">
+        <div class="alert alert-danger" *ngIf="form.controls.description.errors?.required && form.controls.description.touched">
           Please, write the description here! 
         </div>
         <div class="alert alert-danger" *ngIf="form.controls.description.touched && form.controls.description.errors?.minlength">
           Length must be at least {{form.controls.description.errors.minlength.requiredLength}} characters!
         </div>
         <div class="alert alert-danger" *ngIf="form.controls.description.touched && form.controls.description.errors?.maxlength">
-          Length must be at least {{form.controls.description.errors.maxlength.requiredLength}} characters!
+          Length must be at little than {{form.controls.description.errors.maxlength.requiredLength}} characters!
         </div> 
         <button type="submit" class="btn" [disabled]="!form.valid">Create</button>
     </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthenticationService } from '../../services/authentication.service';
+import { AuthenticationService } from '../../shared/services/authentication.service';
 import { Router } from '@angular/router';
 
 
@@ -26,6 +26,10 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('userId', data['userId']);
       this.router.navigate(['/home'])
     })
+  }
+
+  get f() {
+    return this.form.controls;
   }
 
 }

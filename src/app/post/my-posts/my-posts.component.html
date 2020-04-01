@@ -1,7 +1,7 @@
 <h1>My Posts</h1>
 <br />
 <hr />
-
+<!-- <div class="container">
 <app-post-info
   [posts]="posts"
   [currentUser]="currentUser"
@@ -9,3 +9,29 @@
   [hide]="hide"
 >
 </app-post-info>
+</div> -->
+<div class="container">
+    
+    <div *ngFor="let post of posts">
+      <h1>{{ post.name }}</h1>
+      <img src="{{ post.photo }}" /> <br />
+     
+      
+        <h2>Post:</h2>
+      <p style="font-size:22px">{{ post.description}}</p>
+    
+      
+      <div *ngIf="show">
+  
+      <div class="btn-group-vertical" *ngIf="post.creator == currentUser">
+    
+        <a class="specialBtn" routerLink="/delete/{{post._id}}" (click)="deletePost(post._id)">Delete</a>
+  
+      </div>
+    </div>
+  
+    <a *ngIf="details" routerLink="/details/{{post._id}}" class="specialBtn" name={{post._id}}>Details</a>
+  
+    </div>
+   
+  </div>

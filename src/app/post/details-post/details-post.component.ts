@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ListService } from 'src/app/services/list.service';
-import { CreateService } from 'src/app/services/create.service';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { ListService } from 'src/app/shared/services/list.service';
+import { CreateService } from 'src/app/shared/services/create.service';
+import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
 @Component({
   selector: 'app-details-post',
@@ -11,11 +11,20 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class DetailsPostComponent implements OnInit {
 
-  posts;
-  currentUser;
-  show;
-  hide;
-  details;
+  @Input() posts;
+  @Input() currentUser;
+  @Input() show;
+  @Input() hide;
+  @Input() isAdmin;
+  @Input() details;
+  @Input() categoryName;
+  currentUserId;
+
+  // posts;
+  // currentUser;
+  // show;
+  // hide;
+  // details;
   constructor(
     private route: ActivatedRoute,
     private service: ListService,

@@ -4,7 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { CreateComponent } from './post/create/create.component';
-import { CreateCategoryComponent } from './categories/create-category/create-category.component';
+import { CreateCategoryComponent } from './components/create-category/create-category.component';
 import { CategoryPostComponent } from './post/category-post/category-post.component';
 import { DetailsPostComponent } from './post/details-post/details-post.component';
 import { MyPostsComponent } from './post/my-posts/my-posts.component';
@@ -17,7 +17,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
   {
     path: 'home',
-    pathMatch: 'full',
+    // pathMatch: 'full',
     component: HomeComponent
   },
  
@@ -58,10 +58,10 @@ const routes: Routes = [
     canActivate: [IsAuthGuard]
 
   },
-  {
-    path: '**',
-    component: NotFoundComponent
-  }
+  // {
+  //   path: '**',
+  //   component: NotFoundComponent
+  // }
 
 ];
 

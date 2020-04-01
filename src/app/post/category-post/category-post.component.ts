@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ListService } from 'src/app/services/list.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { ListService } from 'src/app/shared/services/list.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,10 +8,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./category-post.component.scss']
 })
 export class CategoryPostComponent implements OnInit {
-
   posts;
   categoryName;
   details;
+  
 
   constructor(private service: ListService, private route: ActivatedRoute) { }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ListService } from 'src/app/services/list.service';
+import { ListService } from 'src/app/shared/services/list.service';
 
 @Component({
   selector: 'app-favourite-posts',

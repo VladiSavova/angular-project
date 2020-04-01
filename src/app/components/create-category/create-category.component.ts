@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CreateService } from 'src/app/services/create.service';
+import { CreateService } from 'src/app/shared/services/create.service';
 
 @Component({
   selector: 'app-create-category',
@@ -20,12 +20,11 @@ export class CreateCategoryComponent implements OnInit {
     })
   }
 
-  createCategory(form) {
-    // this.service.createCategory(this.form.value).subscribe((data) => {
-    //   this.router.navigate(['/home'])
-    // })
-    console.log(form);
-  
+  createCategory() {
+    this.service.createCategory(this.form.value).subscribe((data) => {
+      this.router.navigate(['/home'])
+    })
+
   }
 
 }

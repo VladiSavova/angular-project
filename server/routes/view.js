@@ -6,8 +6,8 @@ router.get('/allPosts/:id', viewController.viewAllposts);
 router.get('/details/:id', viewController.viewDetails);
 router.get('/myPosts/:id', viewController.viewMyPosts);
 router.get('/addToFavourites/:postId/:userId', viewController.addPost);
-router.get('/favouritePosts/:id', viewController.viewFavouritePosts);
-router.get('/removeRecipe/:postId/:userId', viewController.removePost);
+// router.get('/favouritePosts/:id', viewController.viewFavouritePosts);
+// router.get('/favouritePosts/:postId/:userId', viewController.removePost);
 
 
 module.exports = router;

@@ -1,5 +1,5 @@
 <div class="container">
-  <form [formGroup]="form" class="create-form" (submit)="createCategory(form)">
+  <form [formGroup]="form" class="create-form" (submit)="createCategory()">
     <div class="container">
         <h1>Create Category</h1> <br/> 
         <label html="name">Name</label> <br />
@@ -10,12 +10,12 @@
         <div class="alert alert-danger" *ngIf="form.controls.name.touched && form.controls.name.errors?.maxlength">
           Length must be at least {{form.controls.name.errors.maxlength.requiredLength}} characters!
         </div>
-        <div class="alert alert-danger" *ngIf="form.controls.name.touched &&  form.controls.name.errors">
+        <div class="alert alert-danger" *ngIf="form.controls.name.touched &&  form.controls.name.errors?.required">
           Please, add a name!
         </div>
         <label html="photo">Photo</label> <br />
         <input type="text" name="photo" placeholder="Category photo" formControlName="photo" required/> <br />
-        <div class="alert alert-danger" *ngIf="form.controls.photo.touched &&  form.controls.photo.errors">
+        <div class="alert alert-danger" *ngIf="form.controls.photo.touched &&  form.controls.photo.errors?.required">
           Please, add a photo!
         </div>
 

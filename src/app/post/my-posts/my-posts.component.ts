@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ListService } from 'src/app/services/list.service';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { ListService } from 'src/app/shared/services/list.service';
+import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CreateService } from 'src/app/services/create.service';
+import { CreateService } from 'src/app/shared/services/create.service';
 
 @Component({
   selector: 'app-my-posts',

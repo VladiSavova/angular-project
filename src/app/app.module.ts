@@ -11,9 +11,9 @@ import { FooterComponent } from './core/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateComponent } from './post/create/create.component';
-import { AuthenticationService } from './services/authentication.service';
+import { AuthenticationService } from './shared/services/authentication.service';
 import { RouterModule } from '@angular/router';
-import { CreateCategoryComponent } from './categories/create-category/create-category.component';
+import { CreateCategoryComponent } from './components/create-category/create-category.component';
 import { CategoryPostComponent } from './post/category-post/category-post.component';
 import { PostInfoComponent } from './post/post-info/post-info.component';
 import { DetailsPostComponent } from './post/details-post/details-post.component';
@@ -47,7 +47,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HttpClientModule,
     RouterModule,
     
-
   ],
   providers: [
     AuthenticationService,

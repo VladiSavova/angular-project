@@ -6,7 +6,7 @@
 
       <label htmlFor="email">Email</label> <br />
       <input type="email" name="email" placeholder="Enter your email" formControlName="email" pattern="[^@]+@[^\.]+\..+" required/> <br />
-     <div class="alert alert-danger" *ngIf="f.email.touched && f.email.errors.required">
+     <div class="alert alert-danger" *ngIf="f.email.touched && f.email.errors?.required">
         Email is required!
       </div>
       <div class="alert alert-danger" *ngIf="f.email.errors?.pattern">
@@ -15,7 +15,7 @@
 
       <label htmlFor="username">Username</label> <br />
       <input type="text" name="username" placeholder="Enter your username" formControlName="username" required/> <br />
-      <div class="alert alert-danger" *ngIf="f.username.touched && f.username.errors.required">
+      <div class="alert alert-danger" *ngIf="f.username.touched && f.username.errors?.required">
         Username is required!
      </div>
       
@@ -34,6 +34,9 @@
       </div>
       <div class="alert alert-danger" *ngIf="f.password.touched && f.password.errors?.maxlength">
         Length must not be more than {{f.password.errors.maxlength.requiredLength}} characters!
+      </div>
+      <div class="alert alert-danger" *ngIf="f.password.touched && f.password.errors?.required">
+        Write your password
       </div>
       <button type="submit" class="btn"  [disabled]="!form.valid">Register</button>
 </div>

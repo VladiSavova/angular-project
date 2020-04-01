@@ -1,3 +1,39 @@
 h1, p, h3 {
     text-align: center
 }
+
+.specialBtn {
+    margin-left: 37em;
+    background-color: lightcoral;
+    color: black;
+    padding: 16px 12px;
+    margin-top: 0.5em;
+    margin-bottom: 6em;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    opacity: 0.8;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+.container {
+  margin-bottom: 4em;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  width: 270px;
+}
+
+h1,
+p,
+h3,
+h2 {
+  text-align: center;
+}
