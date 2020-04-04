@@ -1,4 +1,11 @@
 # ProjectAngular
+This is my simple project made with Angular.
+## The project is very simple. It has two parts:
+=No-authentication part, which includes:
+login, register and home page ,where you can see all categories, their posts and posts` details.
+
+=Authentication(user) part is where you can:
+create category, create posts, see which posts are yours and you could delete post if you want.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
 
