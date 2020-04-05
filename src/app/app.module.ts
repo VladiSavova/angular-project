@@ -19,6 +19,7 @@ import { DetailsPostComponent } from './post/details-post/details-post.component
 import { MyPostsComponent } from './post/my-posts/my-posts.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
+
 
   ],
   providers: [

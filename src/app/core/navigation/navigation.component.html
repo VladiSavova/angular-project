@@ -15,7 +15,7 @@
         <li><a routerLink="myPosts/{{authService.isAuth()}}">MyPosts</a></li>
         <li><a routerLink="home">AllPosts</a></li>
         <li><a routerLink="category">CreateCategory</a></li>
-        <li><a (click)=" logout()">Logout</a></li>
+        <li><a onclick="M.toast({html: 'Logout successfully!'})" (click)=" logout()">Logout</a></li>
        </div>
 
       </ul>

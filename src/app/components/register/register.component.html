@@ -38,6 +38,6 @@
       <div class="alert alert-danger" *ngIf="f.password.touched && f.password.errors?.required">
         Write your password
       </div>
-      <button type="submit" class="btn"  [disabled]="!form.valid">Register</button>
+      <button type="submit" class="btn" onclick="M.toast({html: 'Register successfully!'})" [disabled]="!form.valid">Register</button>
 </div>
 

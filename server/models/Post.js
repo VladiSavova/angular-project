@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const postSchema = new mongoose.Schema({
-    name: {type: mongoose.Schema.Types.String, required: true, minlength: 5},
+    name: {type: mongoose.Schema.Types.String, required: true, minlength: 3},
     category: {type: mongoose.Schema.Types.ObjectId, ref: 'Category'},
     photo: {type: mongoose.Schema.Types.String, required: true},
     description: {type: mongoose.Schema.Types.String, required: true},

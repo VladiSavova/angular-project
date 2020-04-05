@@ -5,18 +5,18 @@
 
     <label html="username">Username</label> <br />
       <br />
-    <input type="text" name="username" placeholder="Enter your username" formControlName="username" required/> <br />
+    <input type="text" name="username" placeholder="Enter your username" formControlName="username" id="username" required/> <br />
       <div class="alert alert-danger" *ngIf="f.username.touched && f.username.errors?.required">
         Write your username
       </div>
       
     <label html="password">Password</label> <br />
     <br />
-    <input type="password" name="password" placeholder="Enter your password" formControlName="password" required/> <br />
+    <input type="password" name="password" placeholder="Enter your password" formControlName="password"  id="password" required/> <br />
       <div class="alert alert-danger" *ngIf="f.password.touched && f.password.errors?.required">
         Write your password
       </div>
-    <button type="submit" class="btn" [disabled]="!form.valid">
+    <button  onclick="M.toast({html: 'Login sucessfully'})" type="submit" class="btn" [disabled]="!form.valid">
       Login
     </button>
   </div>
