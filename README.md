@@ -5,13 +5,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 
 ## The project is very simple. It has two parts:
-### No-authentication (Anonymous) part, which includes:
-##### login, register, home page. In Home page, you can see all categories, their posts and details about them.
 
+### No-authentication (Anonymous) part:
+#### register - where you can register a user
+#### login - login a register user
+#### Home page - you can see all categories, their posts and details about them
 
-### Authentication(User) part is where you can:
-#### create category, create posts for every different category, see which posts are yours and you could delete post if you want and home page is the same as in anonymous part of the blog. 
-
+### Authentication(User) part :
+#### create category - can create category in blog 
+#### create posts - can create posts for every different category 
+#### my posts - can see which posts are yours
+#### can delete your post if you want - this can happens in post detail 
 
 ## Development server
 
