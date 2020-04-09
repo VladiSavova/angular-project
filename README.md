@@ -1,15 +1,17 @@
-# ProjectAngular
+# Project Angular
 This is my simple project made with Angular. The project was made for the course Vue js SoftUni-2020.
 
-## The project is very simple. It has two parts:
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
 
+
+## The project is very simple. It has two parts:
 ### No-authentication (Anonymous) part, which includes:
 ##### login, register, home page. In Home page, you can see all categories, their posts and details about them.
+
 
 ### Authentication(User) part is where you can:
 #### create category, create posts for every different category, see which posts are yours and you could delete post if you want and home page is the same as in anonymous part of the blog. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
 
 ## Development server
 
