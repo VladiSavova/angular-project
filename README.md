@@ -1,5 +1,5 @@
 # Project Angular
-This is my simple project made with Angular. The project was made for the course Vue js SoftUni-2020.
+This is my simple project made with Angular. The project was made for the course Angular SoftUni-2020.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
 
